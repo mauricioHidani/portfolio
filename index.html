@@ -3,24 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="src/styles/main.css">
     <link rel="stylesheet" href="src/styles/navbar.css">
     <title>Protfolio</title>
 </head>
 <body>
     <header id="navbar">
-        <button id="navbar-toggler">Toggler</button>
-        <ul class="navbar-itms">
-            <li class="navbar-itm active"><a href="#" rel="noopener noreferrer">Home</a></li>
-            <li class="navbar-itm"><a href="#" rel="noopener noreferrer">Projetos</a></li>
-            <li class="navbar-itm"><a href="#" rel="noopener noreferrer">Trabalhos</a></li>
-            <li class="navbar-itm"><a href="#" rel="noopener noreferrer">Sobre</a></li>
-            <li class="navbar-itm"><a href="#" rel="noopener noreferrer">Contatos</a></li>
-        </ul>
-        <div id="navbar-search-itm">
-            <input type="text" name="search" id="search-content">
-            <button id="navbar-submit-search">Search</button>
-        </div>
+        <img src="" alt="logo" id="navbar-logo">
+        <nav class="navbar-itms">
+            <ul>
+                <li class="navbar-itm active">
+                    <a href="#" rel="noopener noreferrer">Home</a>
+                </li>
+                <li class="navbar-itm navbar-dropdown">
+                    <a href="#" rel="noopener noreferrer">Projetos</a>
+                    <ul class="navbar-dropdown-menu">
+                        <li><a href="#">Tipo 1</a></li>
+                        <li><a href="#">Tipo 2</a></li>
+                        <li><a href="#">Tipo 3</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-itm navbar-dropdown">
+                    <a href="#" rel="noopener noreferrer">Trabalhos</a>
+                    <ul class="navbar-dropdown-menu">
+                        <li><a href="#">Tipo 1</a></li>
+                        <li><a href="#">Tipo 2</a></li>
+                        <li><a href="#">Tipo 3</a></li>
+                        <li><a href="#">Tipo 4</a></li>
+                        <li><a href="#">Tipo 5</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-itm">
+                    <a href="#" rel="noopener noreferrer">Sobre</a>
+                </li>
+                <li class="navbar-itm">
+                    <a href="#" rel="noopener noreferrer">Contatos</a>
+                </li>
+            </ul>
+        </nav>
+        <button id="navbar-toggler">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
     </header>
     
 </body>

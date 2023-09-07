@@ -2,24 +2,69 @@
 @import url("assets/text.css");
 
 :root {
+    --navbar-size: 58px;
     --bgk-main: rgba(24, 24, 24, .75);
     --link-cl: rgb(173, 173, 173);
     --link-hover-cl: rgb(255, 255, 255);
+    --link-nv-active-cl: rgb(150, 175, 225);
+    --link-size: .8rem;
 }
 
 #navbar {
+    position: fixed;
+    z-index: 95;
+    width: 100%;
+    height: var(--navbar-size);
     display: grid;
-    grid-template-columns: .1fr .6fr .3fr;
+    grid-template-columns: .1fr .89fr .01fr;
     grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: end;
     background: var(--bgk-main);
 }
 
+#navbar-toggler {
+    height: var(--navbar-size);
+    width: var(--navbar-size);
+    justify-self: start;
+    background: none;
+    border: none;
+}
+
+#navbar-toggler span {
+    font-size: 2.22rem;
+    color: var(--link-nv-active-cl);
+}
+
+#navbar-toggler span:hover {
+    cursor: pointer;
+    color: var(--link-hover-cl);
+}
+
+#navbar-logo {
+    width: var(--navbar-size);
+    margin: 0 1.58rem;
+    align-self: center;
+    justify-self: start;
+}
+
 #navbar ul {
-    margin: 0 .88em;
+    margin: 0 .88rem;
+    justify-self: start;
     display: flex;
-    column-gap: .8em;
+    column-gap: .8rem;
     align-items: center;
     list-style: none;
+    text-transform: uppercase;
+    font-size: var(--link-size);
+    font-weight: 700;
+}
+
+#navbar ul li {
+    height: var(--navbar-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #navbar a {
@@ -31,7 +76,32 @@
     color: var(--link-hover-cl);
 }
 
-#navbar-search-itm {
-    display: flex;
-    flex-direction: row;
+#navbar .active a {
+    color: var(--link-nv-active-cl);
+}
+
+#navbar .navbar-dropdown {
+    position: relative; /* Alterado para 'relative' para que o dropdown fique dentro do elemento pai */
+}
+
+#navbar .navbar-dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--bgk-main);
+    padding: 10px 20px;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, .38);
+    top: 100%; /* Alinha o dropdown abaixo do item do menu */
+    left: -26px;
+    width: 200px; /* Largura personalizada para o dropdown */
+}
+
+#navbar .navbar-dropdown-menu li {
+    height: 1.72rem;
+    justify-content: start;
+    padding: .22rem 0;
+    font-size: var(--link-size);
+}
+
+#navbar .navbar-dropdown:hover .navbar-dropdown-menu {
+    display: block;
 }
