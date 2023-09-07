@@ -1,0 +1,37 @@
+@import url("assets/variables.css");
+@import url("assets/text.css");
+
+:root {
+    --bgk-main: rgba(24, 24, 24, .75);
+    --link-cl: rgb(173, 173, 173);
+    --link-hover-cl: rgb(255, 255, 255);
+}
+
+#navbar {
+    display: grid;
+    grid-template-columns: .1fr .6fr .3fr;
+    grid-template-rows: 1fr;
+    background: var(--bgk-main);
+}
+
+#navbar ul {
+    margin: 0 .88em;
+    display: flex;
+    column-gap: .8em;
+    align-items: center;
+    list-style: none;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: var(--link-cl);
+}
+
+#navbar a:hover {
+    color: var(--link-hover-cl);
+}
+
+#navbar-search-itm {
+    display: flex;
+    flex-direction: row;
+}
