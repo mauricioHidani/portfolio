@@ -9,43 +9,117 @@
     <title>Protfolio</title>
 </head>
 <body>
-    <header id="navbar">
-        <img src="" alt="logo" id="navbar-logo">
-        <nav class="navbar-itms">
-            <ul>
-                <li class="navbar-itm active">
-                    <a href="#" rel="noopener noreferrer">Home</a>
-                </li>
-                <li class="navbar-itm navbar-dropdown">
-                    <a href="#" rel="noopener noreferrer">Projetos</a>
-                    <ul class="navbar-dropdown-menu">
-                        <li><a href="#">Tipo 1</a></li>
-                        <li><a href="#">Tipo 2</a></li>
-                        <li><a href="#">Tipo 3</a></li>
-                    </ul>
-                </li>
-                <li class="navbar-itm navbar-dropdown">
-                    <a href="#" rel="noopener noreferrer">Trabalhos</a>
-                    <ul class="navbar-dropdown-menu">
-                        <li><a href="#">Tipo 1</a></li>
-                        <li><a href="#">Tipo 2</a></li>
-                        <li><a href="#">Tipo 3</a></li>
-                        <li><a href="#">Tipo 4</a></li>
-                        <li><a href="#">Tipo 5</a></li>
-                    </ul>
-                </li>
-                <li class="navbar-itm">
-                    <a href="#" rel="noopener noreferrer">Sobre</a>
-                </li>
-                <li class="navbar-itm">
-                    <a href="#" rel="noopener noreferrer">Contatos</a>
-                </li>
+    <header id="header">
+        <a id="logo" href="#">portifólio</a>
+        <nav id="navbar">
+            <button id="toggle-navbar" aria-label="Abrir menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+                <span id="hamburger"></span>
+            </button>
+            <ul id="menu" role="menu-navbar">
+                <li><a href="#presentation">sobre</a></li>
+                <li><a href="https://github.com/mauricioHidani">protifólio</a></li>
+                <li><a href="#contacts">contato</a></li>
             </ul>
         </nav>
-        <button id="navbar-toggler">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
+        <script src="src/js/navbar.js"></script>
     </header>
-    
+    <main>
+        <section>
+            <div id="presentation" class="box-presentation">
+                <h3>Seja bem vindo(a) ao meu portifólio</h3>
+                <h1>Desenvolvedor Backend</h1>
+                <h4>Mauricio Mityo Hidani</h4>
+                <p>
+    Programação antes para mim era um antigo hobby, agora quero levar como uma 
+    profissão e me inspirar na imensidão de possibilidades que o mundo de 
+    desenvolvimento possibilita.
+                </p>
+            </div>
+        </section>
+
+        <section id="posts">
+            <h1>Postagens</h1>
+
+            <div class="chestbox-3x">
+                <div class="box min-post">
+                    <h2 class="title">Analize e Desenvolvimento de Sistemas</h2>
+                    <p class="root">
+                        cursos / superior / <a href="https://unip.br/">unip</a>
+                    </p>
+                    <p class="content">
+    Concluir o curso de Análise e Desenvolvimento de Sistemas na Universidade 
+    Paulista foi uma experiência enriquecedora que me permitiu explorar uma 
+    ampla variedade de tópicos no mundo do desenvolvimento. Agora, estou ansioso 
+    para aplicar proativamente os conhecimentos e as habilidades adquiridos ao 
+    longo dessa jornada acadêmica em um ambiente profissional. Estou determinado 
+    a buscar oportunidades desafiadoras que me permitam contribuir efetivamente 
+    e continuar meu crescimento como profissional na área de desenvolvimento.
+                    </p>
+                    <p class="description">July 01, 2023 - São Paulo, Brazil</p>
+                    <!-- <a href="#" class="more">
+                        more
+                        <span class="material-symbols-outlined">add</span>
+                    </a> -->
+                </div>
+
+                <div class="box min-post">
+                    <h2 class="title">Cursos DIO</h2>
+                    <p class="root">
+                        cursos / rápido / <a href="https://www.dio.me/talent-match">digital innovation one</a>
+                    </p>
+                    <p class="content">
+    Os cursos fornecidos pela Digital Innovation One desempenharam um papel 
+    fundamental na minha busca por conhecimento no desenvolvimento de aplicações 
+    web. Durante essa jornada, adquiri uma compreensão sólida em diversas 
+    tecnologias, indo além do Java e explorando linguagens como Python. Além 
+    disso, aprofundei meu conhecimento no desenvolvimento frontend, dominando 
+    ferramentas essenciais como JavaScript, HTML e CSS.
+                    </p>
+                    <p class="description">September 10, 2023 - São Paulo, Brazil</p>
+                    <!-- <a href="#" class="more">
+                        more <span class="material-symbols-outlined">add</span>
+                    </a> -->
+                </div>
+
+                <div class="box min-post">
+                    <h2 class="title">CS50</h2>
+                    <p class="root">
+                        cursos / rápido / <a href="https://pll.harvard.edu/course/cs50-introduction-computer-science">cs50</a>
+                    </p>
+                    <p class="content">
+    Minha jornada no renomado curso <a href="https://pll.harvard.edu/course/cs50-introduction-computer-science">CS50</a>, 
+    ministrado pela prestigiosa Universidade 
+    <a href="https://www.harvard.edu/">Harvard</a> e viabilizado através da 
+    incrível <a href="https://www.estudar.org.br/">Fundação Estudar</a>, 
+    transformou e enriqueceu profundamente a minha compreensão das estruturas de 
+    algoritmos e do funcionamento interno dos computadores ao executarem as 
+    operações definidas nos algoritmos.
+    Essa experiência excepcional proporcionou uma imersão completa no mundo da 
+    ciência da computação, permitindo-me explorar conceitos complexos e desafios 
+    empolgantes. Ao longo do curso, tive a oportunidade de desenvolver projetos 
+    que demonstram minha habilidade em aplicar esses conhecimentos de forma 
+    prática.
+                    </p>
+                    <p class="description">May 25, 2023 - São Paulo, Brazil</p>
+                    <!-- <a href="#" class="more">
+                        more <span class="material-symbols-outlined">add</span>
+                    </a> -->
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h1>Contatos</h1>
+            <div id="contacts">
+                <ul>
+                    <li><a href="https://github.com/mauricioHidani">github</a></li>
+                    <li><a href="https://www.linkedin.com/in/mauricio-hidani/">linkedin</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>São Paulo, Brazil | September 2023</p>
+    </footer>
 </body>
 </html>

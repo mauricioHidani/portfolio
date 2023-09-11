@@ -1,107 +1,101 @@
 @import url("assets/variables.css");
 @import url("assets/text.css");
 
-:root {
-    --navbar-size: 58px;
-    --bgk-main: rgba(24, 24, 24, .75);
-    --link-cl: rgb(173, 173, 173);
-    --link-hover-cl: rgb(255, 255, 255);
-    --link-nv-active-cl: rgb(150, 175, 225);
-    --link-size: .8rem;
-}
-
-#navbar {
-    position: fixed;
-    z-index: 95;
-    width: 100%;
-    height: var(--navbar-size);
-    display: grid;
-    grid-template-columns: .1fr .89fr .01fr;
-    grid-template-rows: 1fr;
-    align-items: center;
-    justify-content: end;
-    background: var(--bgk-main);
-}
-
-#navbar-toggler {
-    height: var(--navbar-size);
-    width: var(--navbar-size);
-    justify-self: start;
-    background: none;
-    border: none;
-}
-
-#navbar-toggler span {
-    font-size: 2.22rem;
-    color: var(--link-nv-active-cl);
-}
-
-#navbar-toggler span:hover {
-    cursor: pointer;
-    color: var(--link-hover-cl);
-}
-
-#navbar-logo {
-    width: var(--navbar-size);
-    margin: 0 1.58rem;
-    align-self: center;
-    justify-self: start;
-}
-
-#navbar ul {
-    margin: 0 .88rem;
-    justify-self: start;
-    display: flex;
-    column-gap: .8rem;
-    align-items: center;
-    list-style: none;
+#menu a {
     text-transform: uppercase;
-    font-size: var(--link-size);
-    font-weight: 700;
+    text-decoration: none;
+    font-weight: bolder;
+    color: black;
 }
 
-#navbar ul li {
-    height: var(--navbar-size);
+#menu a:hover {
+    text-decoration: underline;
+}
+
+#logo {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+#header {
+    position: sticky;
+    box-sizing: border-box; /* mantem sempre a tamanho definido no height, somando as outras configs */
+    height: 3rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-#navbar a {
-    text-decoration: none;
-    color: var(--link-cl);
+#menu {
+    display: flex;
+    gap: .5rem;
+    list-style: none;
 }
 
-#navbar a:hover {
-    color: var(--link-hover-cl);
-}
-
-#navbar .active a {
-    color: var(--link-nv-active-cl);
-}
-
-#navbar .navbar-dropdown {
-    position: relative; /* Alterado para 'relative' para que o dropdown fique dentro do elemento pai */
-}
-
-#navbar .navbar-dropdown-menu {
+#toggle-navbar {
     display: none;
-    position: absolute;
-    background-color: var(--bgk-main);
-    padding: 10px 20px;
-    box-shadow: 2px 3px 5px rgba(0, 0, 0, .38);
-    top: 100%; /* Alinha o dropdown abaixo do item do menu */
-    left: -26px;
-    width: 200px; /* Largura personalizada para o dropdown */
 }
 
-#navbar .navbar-dropdown-menu li {
-    height: 1.72rem;
-    justify-content: start;
-    padding: .22rem 0;
-    font-size: var(--link-size);
-}
+@media only screen and (max-width: 768px) {
+    #toggle-navbar { 
+        display: block; 
+    }
+    #menu { 
+        z-index: 1000;
+        display: block; 
+        position: absolute;
+        width: 100%;
+        top: 3rem;
+        right: 0;
+        height: 0;
+        transition: .52s ease-in;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    #navbar.active #menu { 
+        height: calc(100vh - 3rem);
+        display: block; 
+        visibility: visible;
+        overflow-y: auto;
+    }
+    #menu a {
+        padding: 2rem 0;
+        margin: 0 1rem;
+    }
 
-#navbar .navbar-dropdown:hover .navbar-dropdown-menu {
-    display: block;
+    #toggle-navbar {
+        display: flex;
+        gap: 5rem;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+    #hamburger {
+        display: block;
+        border-top: 2px solid;
+        width: 20px;
+    } 
+    #hamburger::before, #hamburger::after {
+        position: relative;
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        margin-top: 5px;
+        background: currentColor;
+        transition: .3s;
+    }
+    #navbar.active #hamburger {
+        border-top-color: transparent;
+    }
+    #navbar.active #hamburger::before {
+        transform: rotate(135deg);
+    }
+    #navbar.active #hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
 }

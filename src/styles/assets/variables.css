@@ -1,3 +1,17 @@
 :root {
-    --bgk-main-cl: rgb(225, 225, 225);
+    --colorA: #0B0A0D;
+    --colorB: #025951;
+    --colorC: #F2E416;
+    --colorD: #F2A922;
+    --colorE: #F2F2F2;
+
+    --main-color: var(--colorE);
+    
+    --navbar-background-color:  var(--colorB);
+    --navbar-normal-text-color: var(--colorA);
+    --navbar-hover-text-color: var(--colorB);
+    --navbar-hover-item-color: var(--colorB);
+    --navbar-height: 3rem;
+    --navbar-item-height: 100%;
+    --dropdown-item-width: 120px;
 }
